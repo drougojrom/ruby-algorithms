@@ -67,3 +67,18 @@ pop_proc = Proc.new do
 end
 
 example_of("pop", pop_proc)
+
+remove_last_proc = Proc.new do
+  list = LinkedList.new
+  list.push(3)
+  list.push(2)
+  list.push(1)
+
+  puts "Before removing last node: " + list.describe
+  removed_value = list.remove_last
+
+  puts "After removing last node: " + list.describe
+  puts "Removed value: #{removed_value}"
+end
+
+example_of("remove last", remove_last_proc)

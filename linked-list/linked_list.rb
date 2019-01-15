@@ -85,4 +85,29 @@ class LinkedList
     end
     value
   end
+
+  # MARK -- remove_last method
+  # kinda tricky one, because you can't chop the tail
+  # without having a reference to the node before that
+  def remove_last
+    # if the head is nil, then we just return nil
+    return nil if head.nil?
+    # if it's only one node, thet remove_last is equal to pop
+    return pop if head.next_node.nil?
+
+    # we keep searching for the next node until
+    # current.next_node is nil
+    prev = @head
+    current = @head
+
+    while !current.next_node.nil?
+      prev = current
+      current = current.next_node
+    end
+    # since current.next_node is nil, we just
+    # disconnect it and update the tail reference
+    prev.next_node = nil
+    @tail = prev
+    return current.value
+  end
 end
