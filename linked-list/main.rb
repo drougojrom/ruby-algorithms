@@ -21,7 +21,7 @@ push_proc = Proc.new do
   list.push(2)
   list.push(1)
 
-  list.describe
+  puts list.describe
 end
 
 example_of("push", push_proc)
