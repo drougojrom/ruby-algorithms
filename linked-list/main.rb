@@ -36,3 +36,19 @@ append_proc = Proc.new do
 end
 
 example_of("append", append_proc)
+
+insert_proc = Proc.new do
+  list = LinkedList.new
+  list.push(3)
+  list.push(2)
+  list.push(1)
+
+  puts "Before inserting " + list.describe
+  middle_node = list.node_at(1)
+  for _ in 1..4
+    middle_node = list.insert(-1, middle_node)
+  end
+  puts "After insert " + list.describe
+end
+
+example_of("insert", insert_proc)

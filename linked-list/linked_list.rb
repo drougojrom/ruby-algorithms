@@ -15,8 +15,7 @@ class LinkedList
   # also known as head-first insertion
 
   def push(value)
-    new_head = Node.new(value)
-    new_head.next_node = @head
+    new_head = Node.new(value, @head)
     @head = new_head
     if tail.nil?
       @tail = @head
@@ -44,17 +43,31 @@ class LinkedList
   end
 
   # MARK -- insert method
-  # insert(after:), also look for a private helper method 
-  # of retrieving node(at_index:)
+  # insert(after:), also look for a helper method 
+  # of retrieving node_at(index:)
 
   def insert(value, after_node)
+    if tail == after_node
+      append(value)
+      return
+    end
 
+    after_node.next_node = Node.new(value, after_node.next_node)
+    return after_node.next_node
   end
 
+  def node_at(index)
+    # create a new reference to head and keep track
+    current_node = @head
+    current_index = 0
 
-  private
+    # use a while loop to move the reference down,
+    # until you get the desired index
+    while !current_node.nil? && current_index < index
+      current_node = current_node.next_node
+      current_index += 1
+    end
 
-  def node(at_index)
-
+    current_node
   end
 end
