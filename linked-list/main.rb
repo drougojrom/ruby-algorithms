@@ -25,3 +25,14 @@ push_proc = Proc.new do
 end
 
 example_of("push", push_proc)
+
+append_proc = Proc.new do
+  list = LinkedList.new
+  list.append(1)
+  list.append(2)
+  list.append(3)
+
+  puts list.describe
+end
+
+example_of("append", append_proc)
