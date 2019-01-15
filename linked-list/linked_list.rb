@@ -47,13 +47,17 @@ class LinkedList
   # of retrieving node_at(index:)
 
   def insert(value, after_node)
+    # when insert is called with the tail node
+    # then it's the same as append method
     if tail == after_node
       append(value)
       return
     end
 
+    # otherwise, you just need to link up
+    # the new node with the rest of the list
     after_node.next_node = Node.new(value, after_node.next_node)
-    return after_node.next_node
+    after_node.next_node
   end
 
   def node_at(index)
