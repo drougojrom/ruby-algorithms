@@ -7,8 +7,8 @@ class Node
 
   def describe
     if !next_node.nil?
-      "#{@value} -> " + "#{@next_node.describe} + "
-    else
+      "#{@value} -> " + "#{@next_node.describe}"
+    elsif !value.nil?
       "#{@value}"
     end
   end
