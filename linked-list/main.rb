@@ -2,7 +2,7 @@ require_relative 'node'
 require_relative 'linked_list'
 require_relative 'helper'
 
-nodes_proc = Proc.new do
+example_of("creating nodes", Proc.new do
   node1 = Node.new(1)
   node2 = Node.new(2)
   node3 = Node.new(3)
@@ -11,33 +11,27 @@ nodes_proc = Proc.new do
   node2.next_node = node3
 
   puts node1.describe
-end
+end)
 
-example_of("creating nodes", nodes_proc)
-
-push_proc = Proc.new do
+example_of("push", Proc.new do
   list = LinkedList.new
   list.push(3)
   list.push(2)
   list.push(1)
 
   puts list.describe
-end
+end)
 
-example_of("push", push_proc)
-
-append_proc = Proc.new do
+example_of("append", Proc.new do
   list = LinkedList.new
   list.append(1)
   list.append(2)
   list.append(3)
 
   puts list.describe
-end
+end)
 
-example_of("append", append_proc)
-
-insert_proc = Proc.new do
+example_of("insert", Proc.new do
   list = LinkedList.new
   list.push(3)
   list.push(2)
@@ -49,11 +43,9 @@ insert_proc = Proc.new do
     middle_node = list.insert(-1, middle_node)
   end
   puts "After insert " + list.describe
-end
+end)
 
-example_of("insert", insert_proc)
-
-pop_proc = Proc.new do
+example_of("pop", Proc.new do
   list = LinkedList.new
   list.push(3)
   list.push(2)
@@ -64,11 +56,9 @@ pop_proc = Proc.new do
 
   puts "After popping list: " + list.describe
   puts "Popped value: #{popped_value}"
-end
+end)
 
-example_of("pop", pop_proc)
-
-remove_last_proc = Proc.new do
+example_of("remove last", Proc.new do
   list = LinkedList.new
   list.push(3)
   list.push(2)
@@ -79,11 +69,9 @@ remove_last_proc = Proc.new do
 
   puts "After removing last node: " + list.describe
   puts "Removed value: #{removed_value}"
-end
+end)
 
-example_of("remove last", remove_last_proc)
-
-remove_after_proc = Proc.new do
+example_of("remove after", Proc.new do
   list = LinkedList.new
   list.push(3)
   list.push(2)
@@ -96,6 +84,4 @@ remove_after_proc = Proc.new do
 
   puts "After removing at index: #{index}: " + list.describe
   puts "Removed value: #{removed_value}"
-end
-
-example_of("remove after", remove_after_proc)
+end)
