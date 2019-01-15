@@ -74,4 +74,15 @@ class LinkedList
 
     current_node
   end
+
+  # MARK -- pop method
+  # basically, as simple as push, but backwards
+  def pop
+    value = @head.value
+    @head = @head.next_node
+    if isEmpty?
+      @tail = nil
+    end
+    value
+  end
 end

@@ -52,3 +52,18 @@ insert_proc = Proc.new do
 end
 
 example_of("insert", insert_proc)
+
+pop_proc = Proc.new do
+  list = LinkedList.new
+  list.push(3)
+  list.push(2)
+  list.push(1)
+
+  puts "Before popping list: " + list.describe
+  popped_value = list.pop
+
+  puts "After popping list: " + list.describe
+  puts "Popped value: #{popped_value}"
+end
+
+example_of("pop", pop_proc)
