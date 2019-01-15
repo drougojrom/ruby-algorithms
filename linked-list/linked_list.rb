@@ -110,4 +110,13 @@ class LinkedList
     @tail = prev
     return current.value
   end
+
+  def remove_after(node)
+    value = node.next_node.value
+    if node.next_node == tail
+      @tail = node
+    end
+    node.next_node = node.next_node.next_node
+    return value
+  end
 end

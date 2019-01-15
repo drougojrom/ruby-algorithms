@@ -82,3 +82,20 @@ remove_last_proc = Proc.new do
 end
 
 example_of("remove last", remove_last_proc)
+
+remove_after_proc = Proc.new do
+  list = LinkedList.new
+  list.push(3)
+  list.push(2)
+  list.push(1)
+
+  puts "Before removing at particular index: " + list.describe
+  index = 1
+  node = list.node_at(index - 1)
+  removed_value = list.remove_after(node)
+
+  puts "After removing at index: #{index}: " + list.describe
+  puts "Removed value: #{removed_value}"
+end
+
+example_of("remove after", remove_after_proc)
