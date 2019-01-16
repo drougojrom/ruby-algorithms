@@ -111,6 +111,8 @@ class LinkedList
     return current.value
   end
 
+  # MARK -- remove after some node
+  # pretty sraightforward one
   def remove_after(node)
     value = node.next_node.value
     if node.next_node == tail
@@ -118,5 +120,23 @@ class LinkedList
     end
     node.next_node = node.next_node.next_node
     return value
+  end
+
+  def [](index)
+    node_at(index)
+  end
+
+  def count
+    return 0 if @head.nil?
+    return 1 if @head.next_node.nil?
+
+    current_node = @head
+    index = 1
+
+    while !current_node.next_node.nil?
+      current_node = current_node.next_node
+      index += 1
+    end
+    return index
   end
 end
