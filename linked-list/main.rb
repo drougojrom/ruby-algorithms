@@ -1,6 +1,6 @@
 require_relative 'node'
 require_relative 'linked_list'
-require_relative 'helper'
+require_relative '../helper'
 
 example_of("creating nodes", Proc.new do
   node1 = Node.new(1)
