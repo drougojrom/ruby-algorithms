@@ -137,6 +137,6 @@ class LinkedList
       current_node = current_node.next_node
       index += 1
     end
-    return index
+    index
   end
 end
