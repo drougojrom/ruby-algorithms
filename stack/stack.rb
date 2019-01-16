@@ -1,7 +1,7 @@
 class Stack
 
-  def initialize
-    @storage = []
+  def initialize(array = [])
+    @storage = array
   end
 
   def describe
@@ -17,7 +17,15 @@ class Stack
   end
 
   def pop
-    return @storage.pop
+    @storage.pop
+  end
+
+  def peek
+    @storage.last
+  end
+
+  def isEmpty?
+    peek.nil?
   end
 
   private

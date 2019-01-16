@@ -14,3 +14,12 @@ example_of("using a stack", Proc.new do
 
   puts "Popped: #{popped_element}"
 end)
+
+example_of("initialize stack from array", Proc.new do
+  array = ["a", "b", "c", "d"]
+  stack = Stack.new(array)
+
+  puts stack.describe
+
+  stack.pop
+end)
